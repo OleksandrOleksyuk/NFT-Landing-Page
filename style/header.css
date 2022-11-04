@@ -1,0 +1,85 @@
+@import url(/style.css);
+header > article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 5rem 0;
+  gap: 5.625rem;
+}
+h1 {
+  font-size: 3.75rem;
+}
+h2 {
+  font-size: 2.25rem;
+}
+h1 + p {
+  font-size: 0.8125rem;
+  margin: 0.75rem 0;
+}
+h2 + p {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.article__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.article__text button {
+  padding: 0.625rem 48px;
+}
+.article__text--bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =============================== */
+.section__card p {
+  font-family: 'DM Mono', sans-serif;
+  font-size: 0.5rem;
+}
+.section__card {
+  background-color: var(--background-color-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 400px;
+  height: 500px;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+figure {
+  text-align: center;
+}
+
+figcaption {
+  display: flex;
+  justify-content: space-between;
+}
+.container__eclipse {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.container__eclipse > figure > img {
+  max-width: 28px;
+  max-height: 28px;
+  border-radius: 50%;
+  margin-left: -10px;
+}
+.section__car--current {
+  display: flex;
+  justify-content: space-between;
+}
+.section__car--current img {
+  max-width: 8px;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+}
+/* =============================== */
+.sponsorship__logo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+.sponsorship__logo figure img {
+  width: 140px;
+}

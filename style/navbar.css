@@ -1,0 +1,30 @@
+@import url(/style.css);
+
+.navbar {
+  color: var(--color-white-gray);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__logo p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.navbar__explore {
+  display: flex;
+  gap: 24px;
+}
+.navbar__searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-white-gray);
+}
+
+.navbar__searchbar input[type='text']::placeholder {
+  color: var(--color-white-gray);
+  padding: 0.5rem;
+}

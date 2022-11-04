@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url(/style/navbar.css);
+@import url(/style/header.css);
+/* =========== Variable ============ */
+:root {
+  --background-color: #1c233d;
+  --background-color-2: #30384d;
+  --color-white: #fff;
+  --color-white-gray: #e5e5e5;
+  --border-radius-sm: 0.375rem;
+  --border-radius-md: 0.625rem;
+  --padding-sm: 0.375rem;
+}
+/* =========== GENERAL SETTINGS ====*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* || GENERAL STYLES */
+input {
+  background-color: transparent;
+}
+body {
+  background-color: var(--background-color);
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+  margin: 3.75rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-white);
+}
+p {
+  color: var(--color-white);
+  font-weight: 400;
+}
+.p-bold {
+  font-weight: 700;
+}
+.button--gradient {
+  background: linear-gradient(
+    85.76deg,
+    rgba(191, 196, 238, 0.0945738) -105.02%,
+    #c367e6 10.94%,
+    rgba(190, 206, 239, 0) 121.57%
+  );
+  color: var(--color-white-gray);
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem 1rem;
+}
