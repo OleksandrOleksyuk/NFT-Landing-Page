@@ -1,0 +1,64 @@
+@import url(/style.css);
+
+main > p,
+main > h4 {
+  text-align: center;
+}
+main > p {
+  font-weight: 500;
+  font-size: 10px;
+}
+main > h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.main__button {
+  display: flex;
+  justify-content: space-evenly;
+}
+.main__button button {
+  background-color: var(--background-color-2);
+  color: var(--color-white);
+  padding: 0.625rem 2rem;
+  border-radius: var(--border-radius-sm);
+  margin: 1rem 0 3.125rem;
+}
+.main__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main__card--marketplace {
+  width: 17.5rem;
+  height: 20rem;
+  background-color: var(--background-color-2);
+  margin: 0.7rem;
+  padding: 1rem 1.875rem;
+  border-radius: var(--border-radius-md);
+}
+.logo-creator img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.main__card--marketplace > figure + div {
+  display: flex;
+  justify-content: space-between;
+}
+.main__card--marketplace > figure > img {
+  width: 215px;
+  height: 215px;
+  margin: 0 auto;
+}
+.main__card--marketplace figcaption h3,
+.main__card--marketplace figcaption p span {
+  font-weight: 700;
+  font-size: 0.625rem;
+}
+.main__card--marketplace figcaption p {
+  font-weight: 400;
+  font-size: 10px;
+}
+.main__card--marketplace > figure + div > div p {
+  font-size: 0.625rem;
+}

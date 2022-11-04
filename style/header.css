@@ -47,13 +47,14 @@ h2 + p {
   padding: 2rem;
   border-radius: 1rem;
 }
-figure {
+header figure {
   text-align: center;
 }
 
 figcaption {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .container__eclipse {
   display: grid;
