@@ -9,12 +9,12 @@ footer article:first-of-type section:last-of-type {
   display: flex;
   justify-content: space-evenly;
 }
-article:first-of-type section:last-of-type div {
+footer article:first-of-type section:last-of-type div {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-article:first-of-type section:last-of-type div > p {
+footer article:first-of-type section:last-of-type div > p {
   font-size: 20px;
   font-weight: 700;
 }
