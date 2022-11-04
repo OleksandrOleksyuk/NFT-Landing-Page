@@ -50,7 +50,9 @@ h2 + p {
 header figure {
   text-align: center;
 }
-
+.section__card > figure > img {
+  margin-bottom: 2rem;
+}
 figcaption {
   display: flex;
   justify-content: space-between;

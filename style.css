@@ -2,12 +2,15 @@
 @import url(/style/navbar.css);
 @import url(/style/header.css);
 @import url(/style/main.css);
+@import url(/style/footer.css);
 /* =========== Variable ============ */
 :root {
   --background-color: #1c233d;
   --background-color-2: #30384d;
   --color-white: #fff;
   --color-white-gray: #e5e5e5;
+  --color-gray: #545c71;
+  --color-purple: #7d7ad8;
   --border-radius-sm: 0.375rem;
   --border-radius-md: 0.625rem;
   --padding-sm: 0.375rem;
