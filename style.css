@@ -25,6 +25,8 @@
 
 html {
   font-size: 16px;
+  width: 64rem;
+  margin: 0 auto;
 }
 
 /* || GENERAL STYLES */
@@ -49,6 +51,12 @@ p {
 }
 .p-bold {
   font-weight: 700;
+}
+.p-gradient {
+  background: -webkit-linear-gradient(#b469d8, #b569d800);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .button--gradient {
   background: linear-gradient(
