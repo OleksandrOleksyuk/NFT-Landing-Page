@@ -1,15 +1,25 @@
 "use strict";
-
-// Function
-const elementCostructor = function (tag, classe, parent, text) {
-  let element = document.createElement(tag);
-  classe ? (element.className = classe) : null;
+const elementConstructor = function ({ tag, attribute, parent, text }) {
+  let element;
+  tag ? (element = document.createElement(tag)) : null;
+  attribute ? (element.className = attribute) : null;
   if (text) {
     let elementText = document.createTextNode(text);
     element.appendChild(elementText);
   }
-  return parent.appendChild(element);
+  parent ? parent.appendChild(element) : null;
+  return element;
 };
+// Function
+// const changeElement = function (tag, classe, parent, text) {
+//   let element = document.createElement(tag);
+//   classe ? (element.className = classe) : null;
+//   if (text) {
+//     let elementText = document.createTextNode(text);
+//     element.appendChild(elementText);
+//   }
+//   return parent.appendChild(element);
+// };
 const figureConstructor = function (src, alt, parent) {
   const element = document.createElement("figure");
   const img = document.createElement("img");
@@ -18,291 +28,381 @@ const figureConstructor = function (src, alt, parent) {
   element.appendChild(img);
   return parent.appendChild(element);
 };
-const obj = {
-  navbar: {
-    logo: "Sapphire",
-    link: ["Explore", "MArketplace", "Artist", "Collection"],
-  },
-  article: {
-    title: "Discover, Sell & Collect Rare NFTs",
-    subtitle:
-      "Digital marketplace for crypto collections and non-fungible token (NFTs)",
-    analyst: [
-      { h2: "35k+", p: "Artwork" },
-      { h2: "15k+", p: "Auctions" },
-      { h2: "15k+", p: "Artists" },
+const navbarObj = {
+  logo: "Sapphire",
+  link: ["Explore", "MArketplace", "Artist", "Collection"],
+};
+const articleObj = {
+  title: "Discover, Sell & Collect Rare NFTs",
+  subtitle:
+    "Digital marketplace for crypto collections and non-fungible token (NFTs)",
+  analyst: [
+    { h2: "35k+", p: "Artwork" },
+    { h2: "15k+", p: "Auctions" },
+    { h2: "15k+", p: "Artists" },
+  ],
+  card: {
+    src: "/assets/bored-ape-nft-logo-0336141711-seeklogo.com.png",
+    alt: "NFT",
+    cardName: "Monkey Apes",
+    circle: [
+      { src: "/assets/eclipse-1.png", alt: "eclipse-1" },
+      { src: "/assets/eclipse-2.png", alt: "eclipse-2" },
+      { src: "/assets/eclipse-3.png", alt: "eclipse-3" },
+      { src: "/assets/eclipse-4.png", alt: "eclipse-4" },
+      { src: "/assets/eclipse-5.png", alt: "eclipse-5" },
     ],
-    card: {
-      src: "/assets/bored-ape-nft-logo-0336141711-seeklogo.com.png",
-      alt: "NFT",
-      cardName: "Monkey Apes",
-      circle: [
-        { src: "/assets/eclipse-1.png", alt: "eclipse-1" },
-        { src: "/assets/eclipse-2.png", alt: "eclipse-2" },
-        { src: "/assets/eclipse-3.png", alt: "eclipse-3" },
-        { src: "/assets/eclipse-4.png", alt: "eclipse-4" },
-        { src: "/assets/eclipse-5.png", alt: "eclipse-5" },
-      ],
-      description: [
-        { name: "Current Bid", price: "0.45ETH" },
-        { name: "Current Bid", price: "0.45ETH" },
-        { name: "Ending In", price: "10h 43m 26s" },
-      ],
-      sponsor: [
-        { src: "/assets/coinbase.png", alt: "coinbase logo" },
-        { src: "/assets/trezor.png", alt: "trezor logo" },
-        { src: "/assets/exodus.png", alt: "exodus logo" },
-        { src: "/assets/bitgo.png", alt: "bitgo logo" },
-      ],
-    },
-  },
-  main: {
-    description: "NFT Marketplace",
-    h4: "Super Hots Drops",
-    button: [
-      "Music",
-      "Art",
-      "Sport",
-      "Photography",
-      "Virtual Reality",
-      "Video",
-      "More",
+    description: [
+      { name: "Current Bid", price: "0.45ETH" },
+      { name: "Current Bid", price: "0.45ETH" },
+      { name: "Ending In", price: "10h 43m 26s" },
     ],
-    marketplace: [
-      {
-        src: "/assets/marketplace-1.png",
-        alt: "marketplace-1",
-        nameCard: {
-          h3: "Crazy Apes",
-          p: { p: "Created by", span: "Oleksandr" },
-          src: "/assets/1.PNG",
-          alt: "assets-1",
-        },
-        description: [
-          { name: "Current Bid", price: "0.45ETH" },
-          { name: "Ending In", price: "10h 43m 26s" },
-        ],
-      },
-      {
-        src: "/assets/marketplace-2.png",
-        alt: "marketplace-2",
-        nameCard: {
-          h3: "Crazy Apes",
-          p: { p: "Created by", span: "Oleksandr" },
-          src: "/assets/1.PNG",
-          alt: "assets-1",
-        },
-        description: [
-          { name: "Current Bid", price: "0.45ETH" },
-          { name: "Ending In", price: "10h 43m 26s" },
-        ],
-      },
-      {
-        src: "/assets/marketplace-3.png",
-        alt: "marketplace-3",
-        nameCard: {
-          h3: "Crazy Apes",
-          p: { p: "Created by", span: "Oleksandr" },
-          src: "/assets/1.PNG",
-          alt: "assets-1",
-        },
-        description: [
-          { name: "Current Bid", price: "0.45ETH" },
-          { name: "Ending In", price: "10h 43m 26s" },
-        ],
-      },
-      {
-        src: "/assets/marketplace-4.png",
-        alt: "marketplace-4",
-        nameCard: {
-          h3: "Crazy Apes",
-          p: { p: "Created by", span: "Oleksandr" },
-          src: "/assets/1.PNG",
-          alt: "assets-1",
-        },
-        description: [
-          { name: "Current Bid", price: "0.45ETH" },
-          { name: "Ending In", price: "10h 43m 26s" },
-        ],
-      },
-      {
-        src: "/assets/marketplace-5.png",
-        alt: "marketplace-5",
-        nameCard: {
-          h3: "Crazy Apes",
-          p: { p: "Created by", span: "Oleksandr" },
-          src: "/assets/1.PNG",
-          alt: "assets-1",
-        },
-        description: [
-          { name: "Current Bid", price: "0.45ETH" },
-          { name: "Ending In", price: "10h 43m 26s" },
-        ],
-      },
-      {
-        src: "/assets/marketplace-6.png",
-        alt: "marketplace-6",
-        nameCard: {
-          h3: "Crazy Apes",
-          p: { p: "Created by", span: "Oleksandr" },
-          src: "/assets/1.PNG",
-          alt: "assets-1",
-        },
-        description: [
-          { name: "Current Bid", price: "0.45ETH" },
-          { name: "Ending In", price: "10h 43m 26s" },
-        ],
-      },
+    sponsor: [
+      { src: "/assets/coinbase.png", alt: "coinbase logo" },
+      { src: "/assets/trezor.png", alt: "trezor logo" },
+      { src: "/assets/exodus.png", alt: "exodus logo" },
+      { src: "/assets/bitgo.png", alt: "bitgo logo" },
     ],
   },
 };
+const mainObj = {
+  description: "NFT Marketplace",
+  h4: "Super Hots Drops",
+  button: [
+    "Music",
+    "Art",
+    "Sport",
+    "Photography",
+    "Virtual Reality",
+    "Video",
+    "More",
+  ],
+  marketplace: [
+    {
+      src: "/assets/marketplace-1.png",
+      alt: "marketplace-1",
+      nameCard: {
+        h3: "Crazy Apes",
+        p: { p: "Created by", span: "Oleksandr" },
+        src: "/assets/1.PNG",
+        alt: "assets-1",
+      },
+      description: [
+        { name: "Current Bid", price: "0.45ETH" },
+        { name: "Ending In", price: "10h 43m 26s" },
+      ],
+    },
+    {
+      src: "/assets/marketplace-2.png",
+      alt: "marketplace-2",
+      nameCard: {
+        h3: "Crazy Apes",
+        p: { p: "Created by", span: "Oleksandr" },
+        src: "/assets/1.PNG",
+        alt: "assets-1",
+      },
+      description: [
+        { name: "Current Bid", price: "0.45ETH" },
+        { name: "Ending In", price: "10h 43m 26s" },
+      ],
+    },
+    {
+      src: "/assets/marketplace-3.png",
+      alt: "marketplace-3",
+      nameCard: {
+        h3: "Crazy Apes",
+        p: { p: "Created by", span: "Oleksandr" },
+        src: "/assets/1.PNG",
+        alt: "assets-1",
+      },
+      description: [
+        { name: "Current Bid", price: "0.45ETH" },
+        { name: "Ending In", price: "10h 43m 26s" },
+      ],
+    },
+    {
+      src: "/assets/marketplace-4.png",
+      alt: "marketplace-4",
+      nameCard: {
+        h3: "Crazy Apes",
+        p: { p: "Created by", span: "Oleksandr" },
+        src: "/assets/1.PNG",
+        alt: "assets-1",
+      },
+      description: [
+        { name: "Current Bid", price: "0.45ETH" },
+        { name: "Ending In", price: "10h 43m 26s" },
+      ],
+    },
+    {
+      src: "/assets/marketplace-5.png",
+      alt: "marketplace-5",
+      nameCard: {
+        h3: "Crazy Apes",
+        p: { p: "Created by", span: "Oleksandr" },
+        src: "/assets/1.PNG",
+        alt: "assets-1",
+      },
+      description: [
+        { name: "Current Bid", price: "0.45ETH" },
+        { name: "Ending In", price: "10h 43m 26s" },
+      ],
+    },
+    {
+      src: "/assets/marketplace-6.png",
+      alt: "marketplace-6",
+      nameCard: {
+        h3: "Crazy Apes",
+        p: { p: "Created by", span: "Oleksandr" },
+        src: "/assets/1.PNG",
+        alt: "assets-1",
+      },
+      description: [
+        { name: "Current Bid", price: "0.45ETH" },
+        { name: "Ending In", price: "10h 43m 26s" },
+      ],
+    },
+  ],
+};
+
 // HEADER -- NAVBAR
-const header = elementCostructor("header", "", document.body);
-const nav = elementCostructor("nav", "navbar", header, "");
-const navLogo = elementCostructor("div", "div__logo", nav, "");
-elementCostructor("p", "", navLogo, obj.navbar.logo);
-const divExplore = elementCostructor("div", "navbar__explore", nav, "");
-const aExplore = elementCostructor("a", "", divExplore, "");
+const header = elementConstructor({ tag: "header", parent: document.body });
+const nav = elementConstructor({
+  tag: "nav",
+  attribute: "navbar",
+  parent: header,
+});
+const navLogo = elementConstructor({
+  tag: "div",
+  attribute: "div__logo",
+  parent: nav,
+});
+elementConstructor({ tag: "p", parent: navLogo, text: navbarObj.logo });
+const divExplore = elementConstructor({
+  tag: "div",
+  attribute: "navbar__explore",
+  parent: nav,
+});
+const aExplore = elementConstructor({ tag: "a", parent: divExplore });
 aExplore.href = "#";
-elementCostructor("p", "p-bold", aExplore, "Explore");
-for (let i = 1; i < obj.navbar.link.length; i++) {
-  const a = elementCostructor("a", "", divExplore, "");
+elementConstructor({
+  tag: "p",
+  attribute: "p-bold",
+  parent: aExplore,
+  text: "Explore",
+});
+for (let i = 1; i < navbarObj.link.length; i++) {
+  const a = elementConstructor({ tag: "a", parent: divExplore });
   a.href = "#";
-  elementCostructor("p", "", a, obj.navbar.link[i]);
+  elementConstructor({ tag: "p", parent: a, text: navbarObj.link[i] });
 }
-const divSearchbar = elementCostructor("div", "navbar__searchbar", nav, "");
-const div1 = elementCostructor("div", "", divSearchbar, "");
-const labelSearchbar = elementCostructor("label", "", div1, "");
+const divSearchbar = elementConstructor({
+  tag: "div",
+  attribute: "navbar__searchbar",
+  parent: nav,
+});
+const div1 = elementConstructor({ tag: "div", parent: divSearchbar });
+const labelSearchbar = elementConstructor({ tag: "label", parent: div1 });
 labelSearchbar.setAttribute("for", "nft-searchbar");
-const inputSearchbar = elementCostructor("input", "", div1, "");
+const inputSearchbar = elementConstructor({ tag: "input", parent: div1 });
 inputSearchbar.setAttribute("type", "text");
 inputSearchbar.setAttribute("name", "nft-searchbar");
 inputSearchbar.id = "nft-searchbar";
 inputSearchbar.setAttribute("placeholder", "Search");
-elementCostructor("span", "material-icons", divSearchbar, "search");
-const navbarButton = elementCostructor("div", "navbar__button", nav, "");
-elementCostructor("button", "button--gradient", navbarButton, "Sign In");
+elementConstructor({
+  tag: "span",
+  attribute: "material-icons",
+  parent: divSearchbar,
+  text: "search",
+});
+const navbarButton = elementConstructor({
+  tag: "div",
+  attribute: "navbar__button",
+  parent: nav,
+});
+elementConstructor({
+  tag: "button",
+  attribute: "button--gradient",
+  parent: navbarButton,
+  text: "Sign In",
+});
 
 // HEADER -- ARTICLE
-const article = elementCostructor("article", "", header, "");
+const article = elementConstructor({ tag: "article", parent: header });
 // HEADER -- SECTION TEXT
-const sectionText = elementCostructor("section", "article__text", article, "");
-const divTextTop = elementCostructor(
-  "div",
-  "article__text--top",
-  sectionText,
-  ""
-);
-elementCostructor("h1", "", divTextTop, obj.article.title);
-elementCostructor("p", "", divTextTop, obj.article.subtitle);
-elementCostructor("button", "button--gradient", divTextTop, "Discover Now");
-const divTextBottom = elementCostructor(
-  "div",
-  "article__text--bottom",
-  sectionText,
-  ""
-);
-for (let i = 0; i < obj.article.analyst.length; i++) {
-  const element = elementCostructor("div", "", divTextBottom, "");
-  elementCostructor("h2", "", element, obj.article.analyst[i].h2);
-  elementCostructor("p", "", element, obj.article.analyst[i].p);
+const sectionText = elementConstructor({
+  tag: "section",
+  attribute: "article__text",
+  parent: article,
+});
+const divTextTop = elementConstructor({
+  tag: "div",
+  attribute: "article__text--top",
+  parent: sectionText,
+});
+elementConstructor({ tag: "h1", parent: divTextTop, text: articleObj.title });
+elementConstructor({ tag: "p", parent: divTextTop, text: articleObj.subtitle });
+elementConstructor({
+  tag: "button",
+  attribute: "button--gradient",
+  parent: divTextTop,
+  text: "Discover Now",
+});
+const divTextBottom = elementConstructor({
+  tag: "div",
+  attribute: "article__text--bottom",
+  parent: sectionText,
+});
+for (let i = 0; i < articleObj.analyst.length; i++) {
+  const element = elementConstructor({ tag: "div", parent: divTextBottom });
+  elementConstructor({
+    tag: "h2",
+    parent: element,
+    text: articleObj.analyst[i].h2,
+  });
+  elementConstructor({
+    tag: "p",
+    parent: element,
+    text: articleObj.analyst[i].p,
+  });
 }
 // HEADER -- CARD
-const articleCard = elementCostructor("section", "section__card", article, "");
+const articleCard = elementConstructor({
+  tag: "section",
+  attribute: "section__card",
+  parent: article,
+});
 const imgCard = figureConstructor(
-  obj.article.card.src,
-  obj.article.card.alt,
+  articleObj.card.src,
+  articleObj.card.alt,
   articleCard
 );
-const imgCaption = elementCostructor("figcaption", "", imgCard, "");
-const div2 = elementCostructor("div", "", imgCaption, "");
-elementCostructor("h3", "", div2, obj.article.card.cardName);
-const div3 = elementCostructor("div", "container__eclipse", imgCaption, "");
-for (let i = 0; i < obj.article.card.circle.length; i++) {
+const imgCaption = elementConstructor({ tag: "figcaption", parent: imgCard });
+const div2 = elementConstructor({ tag: "div", parent: imgCaption });
+elementConstructor({ tag: "h3", parent: div2, text: articleObj.card.cardName });
+const div3 = elementConstructor({
+  tag: "div",
+  attribute: "container__eclipse",
+  parent: imgCaption,
+});
+for (let i = 0; i < articleObj.card.circle.length; i++) {
   figureConstructor(
-    obj.article.card.circle[i].src,
-    obj.article.card.circle[i].alt,
+    articleObj.card.circle[i].src,
+    articleObj.card.circle[i].alt,
     div3
   );
 }
-const descriptionCard = elementCostructor(
-  "div",
-  "section__car--current",
-  articleCard,
-  ""
-);
-for (let i = 0; i < obj.article.card.description.length; i++) {
-  const element = elementCostructor("div", "", descriptionCard, "");
-  elementCostructor("p", "", element, obj.article.card.description[i].name);
-  elementCostructor("p", "", element, obj.article.card.description[i].price);
+const descriptionCard = elementConstructor({
+  tag: "div",
+  attribute: "section__car--current",
+  parent: articleCard,
+});
+for (let i = 0; i < articleObj.card.description.length; i++) {
+  const element = elementConstructor({ tag: "div", parent: descriptionCard });
+  elementConstructor({
+    tag: "p",
+    parent: element,
+    text: articleObj.card.description[i].name,
+  });
+  elementConstructor({
+    tag: "p",
+    parent: element,
+    text: articleObj.card.description[i].price,
+  });
 }
 // HEADER -- SPONSOR
-const sectionSponsor = elementCostructor(
-  "section",
-  "sponsorship__logo",
-  header,
-  ""
-);
-for (let i = 0; i < obj.article.card.sponsor.length; i++) {
+const sectionSponsor = elementConstructor({
+  tag: "section",
+  attribute: "sponsorship__logo",
+  parent: header,
+});
+for (let i = 0; i < articleObj.card.sponsor.length; i++) {
   figureConstructor(
-    obj.article.card.sponsor[i].src,
-    obj.article.card.sponsor[i].alt,
+    articleObj.card.sponsor[i].src,
+    articleObj.card.sponsor[i].alt,
     sectionSponsor
   );
 }
 
 // Main
-const main = elementCostructor("main", "", document.body, "");
-elementCostructor("p", "p-gradient", main, obj.main.description);
-elementCostructor("p", "", main, obj.main.h4);
-const mainButton = elementCostructor("div", "main__button", main, "");
-for (let i = 0; i < obj.main.button.length; i++) {
-  elementCostructor("button", "", mainButton, obj.main.button[i]);
+const main = elementConstructor({ tag: "main", parent: document.body });
+elementConstructor({
+  tag: "p",
+  attribute: "p-gradient",
+  parent: main,
+  text: mainObj.description,
+});
+elementConstructor({ tag: "p", parent: main, text: mainObj.h4 });
+const mainButton = elementConstructor({
+  tag: "div",
+  attribute: "main__button",
+  parent: main,
+});
+for (let i = 0; i < mainObj.button.length; i++) {
+  elementConstructor({
+    tag: "button",
+    parent: mainButton,
+    text: mainObj.button[i],
+  });
 }
-const mainCard = elementCostructor("div", "main__card", main, "");
+const mainCard = elementConstructor({
+  tag: "div",
+  attribute: "main__card",
+  parent: main,
+});
 // repeat
-for (let index = 0; index < obj.main.marketplace.length; index++) {
-  const mainCardMarketplace = elementCostructor(
-    "div",
-    "main__card--marketplace",
-    mainCard,
-    ""
-  );
+for (let index = 0; index < mainObj.marketplace.length; index++) {
+  const mainCardMarketplace = elementConstructor({
+    tag: "div",
+    attribute: "main__card--marketplace",
+    parent: mainCard,
+  });
   const imgMarketplace = figureConstructor(
-    obj.main.marketplace[index].src,
-    obj.main.marketplace[index].alt,
+    mainObj.marketplace[index].src,
+    mainObj.marketplace[index].alt,
     mainCardMarketplace
   );
-  const marketplaceCaption = elementCostructor(
-    "figcaption",
-    "",
-    imgMarketplace,
-    ""
-  );
-  const div4 = elementCostructor("div", "", marketplaceCaption, "");
-  elementCostructor("h3", "", div4, obj.main.marketplace[index].nameCard.h3);
-  const pMarketplace = elementCostructor(
-    "p",
-    "",
-    div4,
-    obj.main.marketplace[index].nameCard.p.p
-  );
-  elementCostructor(
-    "span",
-    "",
-    pMarketplace,
-    obj.main.marketplace[index].nameCard.p.span
-  );
+  const marketplaceCaption = elementConstructor({
+    tag: "figcaption",
+    parent: imgMarketplace,
+  });
+  const div4 = elementConstructor({ tag: "div", parent: marketplaceCaption });
+  elementConstructor({
+    tag: "h3",
+    parent: div4,
+    text: mainObj.marketplace[index].nameCard.h3,
+  });
+  const pMarketplace = elementConstructor({
+    tag: "p",
+    parent: div4,
+    text: mainObj.marketplace[index].nameCard.p.p,
+  });
+  elementConstructor({
+    tag: "span",
+    parent: pMarketplace,
+    text: mainObj.marketplace[index].nameCard.p.span,
+  });
   const creatorLogoMarketplace = figureConstructor(
-    obj.main.marketplace[index].nameCard.src,
-    obj.main.marketplace[index].nameCard.src,
+    mainObj.marketplace[index].nameCard.src,
+    mainObj.marketplace[index].nameCard.src,
     marketplaceCaption
   );
   creatorLogoMarketplace.className = "logo-creator";
-  const element = elementCostructor("div", "", mainCardMarketplace, "");
-  for (let i = 0; i < obj.main.marketplace[index].description.length; i++) {
-    const xxx = elementCostructor("div", "", element, "");
-    elementCostructor("p", "", xxx, obj.article.card.description[i].name);
-    elementCostructor("p", "", xxx, obj.article.card.description[i].price);
+  const element = elementConstructor({
+    tag: "div",
+    parent: mainCardMarketplace,
+  });
+  for (let i = 0; i < mainObj.marketplace[index].description.length; i++) {
+    const xxx = elementConstructor({ tag: "div", parent: element });
+    elementConstructor({
+      tag: "p",
+      parent: xxx,
+      text: articleObj.card.description[i].name,
+    });
+    elementConstructor({
+      tag: "p",
+      parent: xxx,
+      text: articleObj.card.description[i].price,
+    });
   }
 }
