@@ -10,16 +10,6 @@ const elementConstructor = function ({ tag, attribute, parent, text }) {
   parent ? parent.appendChild(element) : null;
   return element;
 };
-// Function
-// const changeElement = function (tag, classe, parent, text) {
-//   let element = document.createElement(tag);
-//   classe ? (element.className = classe) : null;
-//   if (text) {
-//     let elementText = document.createTextNode(text);
-//     element.appendChild(elementText);
-//   }
-//   return parent.appendChild(element);
-// };
 const figureConstructor = function (src, alt, parent) {
   const element = document.createElement("figure");
   const img = document.createElement("img");
