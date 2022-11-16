@@ -28,18 +28,9 @@ const obj = {
     subtitle:
       "Digital marketplace for crypto collections and non-fungible token (NFTs)",
     analyst: [
-      {
-        h2: "35k+",
-        p: "Artwork",
-      },
-      {
-        h2: "15k+",
-        p: "Auctions",
-      },
-      {
-        h2: "15k+",
-        p: "Artists",
-      },
+      { h2: "35k+", p: "Artwork" },
+      { h2: "15k+", p: "Auctions" },
+      { h2: "15k+", p: "Artists" },
     ],
     card: {
       src: "/assets/bored-ape-nft-logo-0336141711-seeklogo.com.png",
@@ -57,7 +48,112 @@ const obj = {
         { name: "Current Bid", price: "0.45ETH" },
         { name: "Ending In", price: "10h 43m 26s" },
       ],
+      sponsor: [
+        { src: "/assets/coinbase.png", alt: "coinbase logo" },
+        { src: "/assets/trezor.png", alt: "trezor logo" },
+        { src: "/assets/exodus.png", alt: "exodus logo" },
+        { src: "/assets/bitgo.png", alt: "bitgo logo" },
+      ],
     },
+  },
+  main: {
+    description: "NFT Marketplace",
+    h4: "Super Hots Drops",
+    button: [
+      "Music",
+      "Art",
+      "Sport",
+      "Photography",
+      "Virtual Reality",
+      "Video",
+      "More",
+    ],
+    marketplace: [
+      {
+        src: "/assets/marketplace-1.png",
+        alt: "marketplace-1",
+        nameCard: {
+          h3: "Crazy Apes",
+          p: { p: "Created by", span: "Oleksandr" },
+          src: "/assets/1.PNG",
+          alt: "assets-1",
+        },
+        description: [
+          { name: "Current Bid", price: "0.45ETH" },
+          { name: "Ending In", price: "10h 43m 26s" },
+        ],
+      },
+      {
+        src: "/assets/marketplace-2.png",
+        alt: "marketplace-2",
+        nameCard: {
+          h3: "Crazy Apes",
+          p: { p: "Created by", span: "Oleksandr" },
+          src: "/assets/1.PNG",
+          alt: "assets-1",
+        },
+        description: [
+          { name: "Current Bid", price: "0.45ETH" },
+          { name: "Ending In", price: "10h 43m 26s" },
+        ],
+      },
+      {
+        src: "/assets/marketplace-3.png",
+        alt: "marketplace-3",
+        nameCard: {
+          h3: "Crazy Apes",
+          p: { p: "Created by", span: "Oleksandr" },
+          src: "/assets/1.PNG",
+          alt: "assets-1",
+        },
+        description: [
+          { name: "Current Bid", price: "0.45ETH" },
+          { name: "Ending In", price: "10h 43m 26s" },
+        ],
+      },
+      {
+        src: "/assets/marketplace-4.png",
+        alt: "marketplace-4",
+        nameCard: {
+          h3: "Crazy Apes",
+          p: { p: "Created by", span: "Oleksandr" },
+          src: "/assets/1.PNG",
+          alt: "assets-1",
+        },
+        description: [
+          { name: "Current Bid", price: "0.45ETH" },
+          { name: "Ending In", price: "10h 43m 26s" },
+        ],
+      },
+      {
+        src: "/assets/marketplace-5.png",
+        alt: "marketplace-5",
+        nameCard: {
+          h3: "Crazy Apes",
+          p: { p: "Created by", span: "Oleksandr" },
+          src: "/assets/1.PNG",
+          alt: "assets-1",
+        },
+        description: [
+          { name: "Current Bid", price: "0.45ETH" },
+          { name: "Ending In", price: "10h 43m 26s" },
+        ],
+      },
+      {
+        src: "/assets/marketplace-6.png",
+        alt: "marketplace-6",
+        nameCard: {
+          h3: "Crazy Apes",
+          p: { p: "Created by", span: "Oleksandr" },
+          src: "/assets/1.PNG",
+          alt: "assets-1",
+        },
+        description: [
+          { name: "Current Bid", price: "0.45ETH" },
+          { name: "Ending In", price: "10h 43m 26s" },
+        ],
+      },
+    ],
   },
 };
 // HEADER -- NAVBAR
@@ -71,6 +167,7 @@ aExplore.href = "#";
 elementCostructor("p", "p-bold", aExplore, "Explore");
 for (let i = 1; i < obj.navbar.link.length; i++) {
   const a = elementCostructor("a", "", divExplore, "");
+  a.href = "#";
   elementCostructor("p", "", a, obj.navbar.link[i]);
 }
 const divSearchbar = elementCostructor("div", "navbar__searchbar", nav, "");
@@ -137,8 +234,75 @@ const descriptionCard = elementCostructor(
 for (let i = 0; i < obj.article.card.description.length; i++) {
   const element = elementCostructor("div", "", descriptionCard, "");
   elementCostructor("p", "", element, obj.article.card.description[i].name);
-
   elementCostructor("p", "", element, obj.article.card.description[i].price);
+}
+// HEADER -- SPONSOR
+const sectionSponsor = elementCostructor(
+  "section",
+  "sponsorship__logo",
+  header,
+  ""
+);
+for (let i = 0; i < obj.article.card.sponsor.length; i++) {
+  figureConstructor(
+    obj.article.card.sponsor[i].src,
+    obj.article.card.sponsor[i].alt,
+    sectionSponsor
+  );
+}
 
-  obj.article.card.description[i];
+// Main
+const main = elementCostructor("main", "", document.body, "");
+elementCostructor("p", "p-gradient", main, obj.main.description);
+elementCostructor("p", "", main, obj.main.h4);
+const mainButton = elementCostructor("div", "main__button", main, "");
+for (let i = 0; i < obj.main.button.length; i++) {
+  elementCostructor("button", "", mainButton, obj.main.button[i]);
+}
+const mainCard = elementCostructor("div", "main__card", main, "");
+// repeat
+for (let index = 0; index < obj.main.marketplace.length; index++) {
+  const mainCardMarketplace = elementCostructor(
+    "div",
+    "main__card--marketplace",
+    mainCard,
+    ""
+  );
+  const imgMarketplace = figureConstructor(
+    obj.main.marketplace[index].src,
+    obj.main.marketplace[index].alt,
+    mainCardMarketplace
+  );
+  const marketplaceCaption = elementCostructor(
+    "figcaption",
+    "",
+    imgMarketplace,
+    ""
+  );
+  const div4 = elementCostructor("div", "", marketplaceCaption, "");
+  elementCostructor("h3", "", div4, obj.main.marketplace[index].nameCard.h3);
+  const pMarketplace = elementCostructor(
+    "p",
+    "",
+    div4,
+    obj.main.marketplace[index].nameCard.p.p
+  );
+  elementCostructor(
+    "span",
+    "",
+    pMarketplace,
+    obj.main.marketplace[index].nameCard.p.span
+  );
+  const creatorLogoMarketplace = figureConstructor(
+    obj.main.marketplace[index].nameCard.src,
+    obj.main.marketplace[index].nameCard.src,
+    marketplaceCaption
+  );
+  creatorLogoMarketplace.className = "logo-creator";
+  const element = elementCostructor("div", "", mainCardMarketplace, "");
+  for (let i = 0; i < obj.main.marketplace[index].description.length; i++) {
+    const xxx = elementCostructor("div", "", element, "");
+    elementCostructor("p", "", xxx, obj.article.card.description[i].name);
+    elementCostructor("p", "", xxx, obj.article.card.description[i].price);
+  }
 }
